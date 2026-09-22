@@ -55,7 +55,7 @@ const App = () => {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ['blogs'] }),
   })
 
-    const commentMutation = useMutation({
+  const commentMutation = useMutation({
     mutationFn: ({ id, comment }) => blogService.addComment(id, comment),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ['blogs'] }),
   })
@@ -100,7 +100,7 @@ const App = () => {
     updateBlogMutation.mutate({ id, blogObject })
   }
 
-    const addComment = (id, comment) => {
+  const addComment = (id, comment) => {
     commentMutation.mutate({ id, comment })
   }
 
@@ -144,7 +144,7 @@ const App = () => {
       <ErrorBoundary>
         <Routes>
           <Route path="/" element={<Blogs blogs={blogs} />} />
-           <Route
+          <Route
             path="/blogs/:id"
             element={
               <BlogView

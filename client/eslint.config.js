@@ -38,4 +38,21 @@ export default [
       'arrow-spacing': ['error', { before: true, after: true }],
     },
   },
+  {
+    files: ['**/*.test.{js,jsx}'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        test: 'readonly',
+        expect: 'readonly',
+        describe: 'readonly',
+        it: 'readonly',
+        vi: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        beforeAll: 'readonly',
+        afterAll: 'readonly',
+      },
+    },
+  },
 ]
